@@ -9,21 +9,25 @@
 # If extensions (or modules to document with autodoc) are in another directory,                                                                                            
 # add these directories to sys.path here. If the directory is relative to the                                                                                              
 # documentation root, use os.path.abspath to make it absolute, like shown here.                                                                                            
-#                                                                                                                                                                          
+#
+import json
 import os
 import sys
+
 sys.path.insert(0, os.path.abspath('.'))
 print(sys.path)
 
 # -- Project information -----------------------------------------------------                                                                                             
 
+with open("../recipe/meta.json", "r", encoding="utf-8") as f:
+    version = json.loads(f.read())["version"]
+
 project = 'Unified Workflow'
 author = ''
-author_list = 'Mahajan, R., C. Holt, B. Cash, F. Gabelmann, O. Adejumo, and J. Prestopnik'
-version = '0.1.0'
+author_list = 'Holt, C., E. Carpenter, J. Derrico, V. Hagerty, F. Gabelmann, R. Mahajan, B. Cash, O. Adejumo, J. Prestopnik'
 verinfo = version
 release = f'{version}'
-release_date = '2022-05-06'
+release_date = '2023-05-01'
 release_year = release_date.split("-")[0]
 release_month = release_date.split("-")[1]
 release_day = release_date.split("-")[2]
